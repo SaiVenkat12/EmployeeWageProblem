@@ -32,17 +32,18 @@ namespace EmpWageProblem
 
             while (totalHrs < Max_Hrs && TotalDays <= Total_Working_Days)
             {
+                TotalDays++;
+
                 switch (empCheck)
-                {
+                {                  
                     case IS_PART_TIME:
-                        empHrs = 4;
-                        TotalDays++;
+                        empHrs = 4;                        
                         break;
 
                     case IS_FULL_TIME:                     
                         empHrs = 8;
-                        TotalDays++;
                         break;
+
                     default:
                         empHrs = 0;
                         break;
