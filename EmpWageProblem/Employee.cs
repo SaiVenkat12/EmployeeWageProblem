@@ -8,18 +8,23 @@ namespace EmpWageProblem
 {
     public class Employee
     {
-        int IS_FULL_TIME = 1, Rate_Per_Hour = 20, empHrs = 0, EmpDailyWage = 0;
+        int IS_FULL_TIME = 1, Is_PART_TIME = 2, Rate_Per_Hour = 20, empHrs = 0, EmpDailyWage = 0;
 
         public void CheckAttendance()
         {
             
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
+            int empCheck = random.Next(0, 3);
 
             if (empCheck == IS_FULL_TIME)
             {
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is Full Time");
                 empHrs = 8;
+            }
+            else if (empCheck == Is_PART_TIME)
+            {
+                Console.WriteLine("Employee is Part Time");
+                empHrs = 4;
             }
             else
             {
