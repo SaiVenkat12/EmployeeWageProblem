@@ -8,32 +8,19 @@ namespace EmpWageProblem
 {
     public class Employee
     {
-        public const int IS_FULL_TIME = 1, IS_PART_TIME = 2, Rate_Per_Hour = 20, Total_Working_Days = 20, Max_Hrs = 100;
+        public const int IS_FULL_TIME = 1, IS_PART_TIME = 2;
 
 
-        public void CheckAttendance()
+        public static int computeEmpWage(string company, int Rate_Per_Hour, int WorkingDays, int Max_Hrs)
         {
             int empHrs = 0, MonthlyWage = 0, totalHrs = 0, TotalDays = 0;
+            Console.WriteLine("Company: " + company);
 
-            Random random = new Random();
-            int empCheck = random.Next(0, 3);
-            if (empCheck == IS_FULL_TIME)
-            {
-                Console.WriteLine("Employee is Full Time");
-            }
-            else if (empCheck == IS_PART_TIME)
-            {
-                Console.WriteLine("Employee is Part Time");
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-            }
-
-            while (totalHrs < Max_Hrs && TotalDays <= Total_Working_Days)
+            while (totalHrs < Max_Hrs && TotalDays <= WorkingDays)
             {
                 TotalDays++;
-
+                Random random = new Random();
+                int empCheck = random.Next(0, 3);
                 switch (empCheck)
                 {                  
                     case IS_PART_TIME:
@@ -52,7 +39,8 @@ namespace EmpWageProblem
             }
 
             MonthlyWage = Rate_Per_Hour * totalHrs;
-            Console.WriteLine("Employee Wage is " + MonthlyWage);
+           Console.WriteLine("Total Employee Wage is " + MonthlyWage);
+           return MonthlyWage;
 
         }
     }

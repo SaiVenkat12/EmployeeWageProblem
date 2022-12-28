@@ -6,8 +6,9 @@
         {
             Console.WriteLine("---Employee Wage Problem---");
 
-            Employee empWage = new Employee();
-            empWage.CheckAttendance();
+            Employee.computeEmpWage("Apple", 30, 20,100);
+            Employee.computeEmpWage("Dmart", 10, 20, 100);
+
 
         }
     }
